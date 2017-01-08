@@ -1,0 +1,19 @@
+PODS:
+  - Kiwi (2.4.0)
+  - TYPinLock (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - TYPinLock (from `../`)
+
+EXTERNAL SOURCES:
+  TYPinLock:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  TYPinLock: 095d0d4868454034e8659897ff3f6ecd736ec9be
+
+PODFILE CHECKSUM: 98dbbe722fb75eba9d00910472e5da28b0d9f8ff
+
+COCOAPODS: 1.1.1

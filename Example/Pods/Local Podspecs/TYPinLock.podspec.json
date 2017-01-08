@@ -1,0 +1,22 @@
+{
+  "name": "TYPinLock",
+  "version": "0.1.0",
+  "summary": "A short description of TYPinLock.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/TYPinLock",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yinhun": "yinhun@wacai.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/TYPinLock.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "TYPinLock/Classes/**/*"
+}

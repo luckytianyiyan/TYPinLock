@@ -1,0 +1,11 @@
+platform :ios,'7.0'
+
+target 'TYPinLock_Example' do
+  pod 'TYPinLock', :path => '../'
+
+  target 'TYPinLock_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  end
+end
