@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "7.0"
   },
-  "source_files": "TYPinLock/Classes/**/*"
+  "source_files": "TYPinLock/Classes/**/*",
+  "resource_bundles": {
+    "TYPinLock": [
+      "TYPinLock/Assets/*"
+    ]
+  }
 }

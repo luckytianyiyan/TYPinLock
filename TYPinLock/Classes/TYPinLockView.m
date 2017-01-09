@@ -8,6 +8,7 @@
 
 #import "TYPinLockView.h"
 #import "TYPinButton.h"
+#import "NSBundle+TYPinLock.h"
 
 static CGFloat const TYPinLockViewAnimationLength = 0.15f;
 
@@ -37,17 +38,18 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        NSBundle *bundle = [NSBundle typ_bundle];
         _enterPasscodeLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
-            label.text = NSLocalizedString(@"Enter Passcode", nil);
+            label.text = NSLocalizedStringFromTableInBundle(@"pinlock.title", nil, bundle, nil);
             label;
         });
         [self addSubview:_enterPasscodeLabel];
         
         _okButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"OK", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedString(@"ok", nil) forState:UIControlStateNormal];
             button.alpha = 0;
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button;
@@ -56,7 +58,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _deleteButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedString(@"delete", @"") forState:UIControlStateNormal];
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button.alpha = 0;
             button;
@@ -67,7 +69,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _cancelButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedString(@"cancel", nil) forState:UIControlStateNormal];
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button;
         });

@@ -9,6 +9,7 @@
 #import "TYPinLockViewController.h"
 #import "TYPinButton.h"
 #import "TYPinLockView.h"
+#import "NSBundle+TYPinLock.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface TYPinLockViewController ()
@@ -21,10 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSBundle *bundle = [NSBundle typ_bundle];
+    
     self.view.backgroundColor = [UIColor colorWithRed:54 / 255.f green:70 / 255.f blue:92 / 255.f alpha:1];
     _lockView = ({
         TYPinLockView *view = [[TYPinLockView alloc] init];
-        view.detailLabel.text = NSLocalizedString(@"You need a PIN to continue", nil);
+        view.detailLabel.text = NSLocalizedStringFromTableInBundle(@"pinlock.detail", nil, bundle, nil);
         view.translatesAutoresizingMaskIntoConstraints = NO;
         [view.okButton addTarget:self action:@selector(onOkButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [view.cancelButton addTarget:self action:@selector(onCancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
