@@ -15,6 +15,8 @@
 @property (nonatomic, strong) UIButton *setupButton;
 @property (nonatomic, strong) UIButton *lockButton;
 
+@property (nonatomic, copy) NSString *pinCode;
+
 @end
 
 @implementation TYViewController
@@ -55,7 +57,9 @@
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };
     viewController.onOkButtonClicked = ^(NSString *pinCode) {
+        NSLog(@"pin code: %@", pinCode);
         // Save Pin Code
+        self.pinCode = pinCode;
         __strong typeof(viewController) strongViewController = weakViewController;
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };
@@ -63,7 +67,28 @@
 }
 
 - (void)onLockButtonClicked:(UIButton *)sender {
+    if (self.pinCode.length < 1) {
+        return;
+    }
     
+    TYPinLockViewController *viewController = [[TYPinLockViewController alloc] init];
+    viewController.pinCodeMinLength = 4;
+    viewController.pinCodeMaxLength = 6;
+    __weak typeof(viewController) weakViewController = viewController;
+    viewController.onCancelButtonClicked = ^{
+        __strong typeof(viewController) strongViewController = weakViewController;
+        [strongViewController dismissViewControllerAnimated:YES completion:nil];
+    };
+    viewController.onOkButtonClicked = ^(NSString *pinCode) {
+        __strong typeof(viewController) strongViewController = weakViewController;
+        // Validate Pin Code
+        if ([self.pinCode isEqualToString:pinCode]) {
+            [strongViewController dismissViewControllerAnimated:YES completion:nil];
+            return;
+        }
+        [strongViewController playErrorAnimation];
+    };
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end
