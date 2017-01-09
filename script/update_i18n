@@ -1,0 +1,5 @@
+#!/bin/sh
+current_dir=$(dirname $0)
+find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/en.lproj -v
+find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/zh-Hans.lproj -v
+find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/zh-Hant.lproj -v
