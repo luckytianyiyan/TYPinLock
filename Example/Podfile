@@ -2,7 +2,7 @@ platform :ios,'7.0'
 
 target 'TYPinLock_Example' do
   pod 'TYPinLock', :path => '../'
-
+  pod 'Masonry'
   target 'TYPinLock_Tests' do
     inherit! :search_paths
 
