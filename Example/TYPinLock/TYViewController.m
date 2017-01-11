@@ -9,7 +9,8 @@
 #import "TYViewController.h"
 #import <Masonry/Masonry.h>
 #import <TYPinLock/TYPinLockViewController.h>
-#import <TYPinLock/TYPinLockSetupViewController.h>
+#import <TYPinLock/TYPinSetupViewController.h>
+#import <TYPinLock/TYPinValidationViewController.h>
 
 @interface TYViewController ()
 
@@ -49,7 +50,7 @@
 #pragma mark - Actions
 
 - (void)onSetupButtonClicked:(UIButton *)sender {
-    TYPinLockSetupViewController *viewController = [[TYPinLockSetupViewController alloc] init];
+    TYPinSetupViewController *viewController = [[TYPinSetupViewController alloc] init];
     viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.errorVibrateEnabled = YES;
     viewController.tapSoundEnabled = YES;
@@ -73,23 +74,23 @@
         return;
     }
     
-    TYPinLockViewController *viewController = [[TYPinLockViewController alloc] init];
+    TYPinValidationViewController *viewController = [[TYPinValidationViewController alloc] init];
     viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.cancelEnabled = NO;
+    __weak typeof(self) weakSelf = self;
+    viewController.validatePin = ^(NSString *pinCode) {
+        __strong typeof(self) strongSelf = weakSelf;
+        return [strongSelf.pinCode isEqualToString:pinCode];
+    };
     __weak typeof(viewController) weakViewController = viewController;
-    viewController.onCancelButtonClicked = ^{
+    viewController.onValidateSuccess = ^(NSString *pinCode) {
         __strong typeof(viewController) strongViewController = weakViewController;
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };
-    viewController.onOkButtonClicked = ^(NSString *pinCode) {
-        __strong typeof(viewController) strongViewController = weakViewController;
-        // Validate Pin Code
-        if ([self.pinCode isEqualToString:pinCode]) {
-            [strongViewController dismissViewControllerAnimated:YES completion:nil];
-            return;
-        }
-        [strongViewController playErrorAnimation];
+    viewController.onValidateError = ^(NSString *pinCode) {
+        NSLog(@"PinCode Error");
     };
+
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
