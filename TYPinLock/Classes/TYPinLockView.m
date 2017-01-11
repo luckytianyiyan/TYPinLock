@@ -65,8 +65,6 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         });
         [self addSubview:_deleteButton];
         
-        _cancelEnabled = YES;
-        
         _cancelButton = ({
             UIButton *button = [[UIButton alloc] init];
             [button setTitle:NSLocalizedString(@"cancel", nil) forState:UIControlStateNormal];
@@ -166,14 +164,11 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
 }
 
 - (void)setCancelButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion {
-    [self setDeleteButtonHidden:!hidden animated:animated completion:completion];
+    [self setButton:self.cancelButton hidden:hidden animated:animated completion:completion];
 }
 
 - (void)setDeleteButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion {
     [self setButton:self.deleteButton hidden:hidden animated:animated completion:completion];
-    if (_cancelEnabled) {
-        [self setButton:self.cancelButton hidden:!hidden animated:animated completion:completion];
-    }
 }
 
 - (void)updateDetailText:(NSString *)text duration:(CGFloat)duration completion:(nullable void (^)(BOOL finished))completion {
@@ -220,18 +215,6 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
 
 - (NSString *)pinCode {
     return self.digitsTextField.text;
-}
-
-- (void)setCancelEnabled:(BOOL)cancelEnabled {
-    if (_cancelEnabled == cancelEnabled) {
-        return;
-    }
-    _cancelEnabled = cancelEnabled;
-    if (cancelEnabled) {
-        [self addSubview:self.cancelButton];
-    } else {
-        [self.cancelButton removeFromSuperview];
-    }
 }
 
 #pragma mark - Helper

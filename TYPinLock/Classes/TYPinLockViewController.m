@@ -24,6 +24,7 @@
     [super viewDidLoad];
     NSBundle *bundle = [NSBundle typ_bundle];
     
+    _cancelEnabled = YES;
     self.view.backgroundColor = [UIColor colorWithRed:54 / 255.f green:70 / 255.f blue:92 / 255.f alpha:1];
     _lockView = ({
         TYPinLockView *view = [[TYPinLockView alloc] init];
@@ -38,12 +39,7 @@
             if (strongSelf.pinCodeMaxLength == 0 || strongSelf.lockView.pinCode.length < strongSelf.pinCodeMaxLength) {
                 strongSelf.lockView.pinCode = [NSString stringWithFormat:@"%@%ld", strongSelf.lockView.pinCode, number];
             }
-            [strongSelf.lockView setDeleteButtonHidden:NO animated:YES completion:nil];
-            
-            if ((strongSelf.pinCodeMinLength == 0 && strongSelf.lockView.pinCode.length > 0) ||
-                strongSelf.lockView.pinCode.length >= strongSelf.pinCodeMinLength) {
-                [strongSelf.lockView setOkButtonHidden:NO animated:YES completion:nil];
-            }
+            [strongSelf updateButtonsHidden];
             if (strongSelf.tapSoundEnabled) {
                 AudioServicesPlaySystemSound(1105);
             }
@@ -82,17 +78,8 @@
     if (self.lockView.pinCode.length > 0) {
         self.lockView.pinCode = [self.lockView.pinCode substringWithRange:NSMakeRange(0, self.lockView.pinCode.length - 1)];
     }
-
-    if (self.lockView.pinCode.length < 1) {
-        [self.lockView setDeleteButtonHidden:YES animated:YES completion:nil];
-        if (self.pinCodeMinLength < 1) {
-            [self.lockView setOkButtonHidden:YES animated:YES completion:nil];
-            return;
-        }
-    }
-    if (self.lockView.pinCode.length < self.pinCodeMinLength) {
-        [self.lockView setOkButtonHidden:YES animated:YES completion:nil];
-    }
+    
+    [self updateButtonsHidden];
 }
 
 #pragma mark - Setter
@@ -102,6 +89,24 @@
     if (self.lockView.pinCode.length >= pinCodeMinLength) {
         [self.lockView setOkButtonHidden:NO animated:NO completion:nil];
     }
+}
+
+- (void)setCancelEnabled:(BOOL)cancelEnabled {
+    _cancelEnabled = cancelEnabled;
+    [self updateButtonsHidden];
+}
+
+#pragma mark - Helper
+
+- (void)updateButtonsHidden {
+    BOOL hasCode = self.lockView.pinCode.length < 1;
+    [self.lockView setDeleteButtonHidden:hasCode animated:YES completion:nil];
+    if (self.cancelEnabled) {
+        [self.lockView setCancelButtonHidden:!hasCode animated:YES completion:nil];
+    }
+    
+    BOOL okShouldShow = (self.pinCodeMinLength == 0 && self.lockView.pinCode.length > 0) || self.lockView.pinCode.length >= self.pinCodeMinLength;
+    [self.lockView setOkButtonHidden:!okShouldShow animated:YES completion:nil];
 }
 
 @end

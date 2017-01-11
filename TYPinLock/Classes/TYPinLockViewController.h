@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger pinCodeMinLength;
 @property (nonatomic, assign) NSInteger pinCodeMaxLength;
 @property (nonatomic, assign) BOOL tapSoundEnabled;
+@property (nonatomic, assign) BOOL cancelEnabled;
 
 @property (nonatomic, copy, nullable) void (^onOkButtonClicked)(NSString *pinCode);
 @property (nonatomic, copy, nullable) void (^onCancelButtonClicked)();

@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIButton *deleteButton;
 @property (nonatomic, strong, readonly) UIButton *cancelButton;
 
-@property (nonatomic, assign) BOOL cancelEnabled;
-
 @property (nonatomic, copy) void (^onNumberSelected)(NSInteger number);
 
 @property (nonatomic, strong) UIColor *labelColor UI_APPEARANCE_SELECTOR;
