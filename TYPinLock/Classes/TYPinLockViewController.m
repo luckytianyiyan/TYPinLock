@@ -20,16 +20,35 @@
 
 @implementation TYPinLockViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    _cancelEnabled = YES;
+    _tapSoundEnabled = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSBundle *bundle = [NSBundle typ_bundle];
     
-    _cancelEnabled = YES;
     self.view.backgroundColor = [UIColor colorWithRed:54 / 255.f green:70 / 255.f blue:92 / 255.f alpha:1];
     _lockView = ({
         TYPinLockView *view = [[TYPinLockView alloc] init];
         view.detailLabel.text = NSLocalizedStringFromTableInBundle(@"pinlock.detail", nil, bundle, nil);
         view.translatesAutoresizingMaskIntoConstraints = NO;
+        [view setCancelButtonHidden:!_cancelEnabled animated:YES completion:nil];
         [view.okButton addTarget:self action:@selector(onOkButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [view.cancelButton addTarget:self action:@selector(onCancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [view.deleteButton addTarget:self action:@selector(onDeleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -82,7 +101,7 @@
     [self updateButtonsHidden];
 }
 
-#pragma mark - Setter
+#pragma mark - Setter / Getter
 
 - (void)setPinCodeMinLength:(NSInteger)pinCodeMinLength {
     _pinCodeMinLength = pinCodeMinLength;

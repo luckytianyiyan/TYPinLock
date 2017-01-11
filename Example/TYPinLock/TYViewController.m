@@ -77,6 +77,7 @@
     TYPinLockViewController *viewController = [[TYPinLockViewController alloc] init];
     viewController.pinCodeMinLength = 4;
     viewController.pinCodeMaxLength = 6;
+    viewController.cancelEnabled = NO;
     __weak typeof(viewController) weakViewController = viewController;
     viewController.onCancelButtonClicked = ^{
         __strong typeof(viewController) strongViewController = weakViewController;
