@@ -14,7 +14,7 @@
 
 @interface TYPinLockViewController ()
 
-@property (nonatomic, strong) TYPinLockView *lockView;
+@property (nonatomic, strong, readwrite) TYPinLockView *lockView;
 
 @end
 
@@ -61,7 +61,6 @@
 - (void)playErrorAnimation {
     NSBundle *bundle = [NSBundle typ_bundle];
     [self.lockView playErrorAnimation:0.08f direction:-35.f];
-    [self.lockView updateDetailText:NSLocalizedStringFromTableInBundle(@"pinlock.passcode.error", nil, bundle, nil) duration:0.08f completion:nil];
 }
 
 #pragma mark - Event

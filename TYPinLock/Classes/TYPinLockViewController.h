@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TYPinLockView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TYPinLockViewController : UIViewController
+
+@property (nonatomic, strong, readonly) TYPinLockView *lockView;
 
 @property (nonatomic, assign) NSInteger pinCodeMinLength;
 @property (nonatomic, assign) NSInteger pinCodeMaxLength;
