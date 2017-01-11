@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setDeleteButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 - (void)setOkButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
+- (void)setCancelButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 
 @end
 

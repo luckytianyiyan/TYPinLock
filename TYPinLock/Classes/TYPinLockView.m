@@ -165,6 +165,10 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
     [self setButton:self.okButton hidden:hidden animated:animated completion:completion];
 }
 
+- (void)setCancelButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion {
+    [self setDeleteButtonHidden:!hidden animated:animated completion:completion];
+}
+
 - (void)setDeleteButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion {
     [self setButton:self.deleteButton hidden:hidden animated:animated completion:completion];
     if (_cancelEnabled) {
