@@ -90,6 +90,13 @@
     viewController.onValidateError = ^(NSString *pinCode) {
         NSLog(@"PinCode Error");
     };
+    viewController.forgotPassword = ^{
+        // do something...
+        NSLog(@"Forgot Password");
+        self.pinCode = @"";
+        __strong typeof(viewController) strongViewController = weakViewController;
+        [strongViewController dismissViewControllerAnimated:YES completion:nil];
+    };
 
     [self presentViewController:viewController animated:YES completion:nil];
 }
