@@ -56,7 +56,8 @@
         __weak typeof(self) weakSelf = self;
         view.onNumberSelected = ^(NSInteger number) {
             __strong typeof(self) strongSelf = weakSelf;
-            if (strongSelf.pinCodeMaxLength == 0 || strongSelf.lockView.pinCode.length < strongSelf.pinCodeMaxLength) {
+            NSUInteger maxLength = NSMaxRange(strongSelf.pinCodeLengthRange);
+            if (maxLength == 0 || strongSelf.lockView.pinCode.length < maxLength - 1) {
                 strongSelf.lockView.pinCode = [NSString stringWithFormat:@"%@%ld", strongSelf.lockView.pinCode, number];
             }
             [strongSelf updateButtonsHidden];
@@ -104,10 +105,15 @@
 
 #pragma mark - Setter / Getter
 
-- (void)setPinCodeMinLength:(NSInteger)pinCodeMinLength {
-    _pinCodeMinLength = pinCodeMinLength;
-    if (self.lockView.pinCode.length >= pinCodeMinLength) {
+- (void)setPinCodeLengthRange:(NSRange)pinCodeLengthRange {
+    _pinCodeLengthRange = pinCodeLengthRange;
+    NSUInteger maxLength = NSMaxRange(pinCodeLengthRange);
+    NSUInteger pinCodeLength = self.lockView.pinCode.length;
+    if (pinCodeLength > maxLength) {
+        self.lockView.pinCode = [self.lockView.pinCode substringWithRange:NSMakeRange(0, maxLength - pinCodeLength)];
         [self.lockView setOkButtonHidden:NO animated:NO completion:nil];
+    } else {
+        [self.lockView setOkButtonHidden:!NSLocationInRange(pinCodeLength, pinCodeLengthRange) animated:NO completion:nil];
     }
 }
 
@@ -125,8 +131,7 @@
         [self.lockView setCancelButtonHidden:!hasCode animated:YES completion:nil];
     }
     
-    BOOL okShouldShow = (self.pinCodeMinLength == 0 && self.lockView.pinCode.length > 0) || self.lockView.pinCode.length >= self.pinCodeMinLength;
-    [self.lockView setOkButtonHidden:!okShouldShow animated:YES completion:nil];
+    [self.lockView setOkButtonHidden:!NSLocationInRange(self.lockView.pinCode.length, self.pinCodeLengthRange) animated:YES completion:nil];
 }
 
 @end

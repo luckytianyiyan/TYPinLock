@@ -50,8 +50,7 @@
 
 - (void)onSetupButtonClicked:(UIButton *)sender {
     TYPinLockSetupViewController *viewController = [[TYPinLockSetupViewController alloc] init];
-    viewController.pinCodeMinLength = 4;
-    viewController.pinCodeMaxLength = 6;
+    viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.errorVibrateEnabled = YES;
     viewController.tapSoundEnabled = YES;
     __weak typeof(viewController) weakViewController = viewController;
@@ -75,8 +74,7 @@
     }
     
     TYPinLockViewController *viewController = [[TYPinLockViewController alloc] init];
-    viewController.pinCodeMinLength = 4;
-    viewController.pinCodeMaxLength = 6;
+    viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.cancelEnabled = NO;
     __weak typeof(viewController) weakViewController = viewController;
     viewController.onCancelButtonClicked = ^{

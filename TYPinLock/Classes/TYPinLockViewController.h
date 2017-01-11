@@ -15,8 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) TYPinLockView *lockView;
 
-@property (nonatomic, assign) NSInteger pinCodeMinLength;
-@property (nonatomic, assign) NSInteger pinCodeMaxLength;
+@property (nonatomic, assign) NSRange pinCodeLengthRange;
 @property (nonatomic, assign) BOOL tapSoundEnabled;
 @property (nonatomic, assign) BOOL cancelEnabled;
 
