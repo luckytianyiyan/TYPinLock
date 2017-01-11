@@ -20,19 +20,19 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self commonInit];
+        [self initSetupPinLock];
     }
     return self;
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self commonInit];
+        [self initSetupPinLock];
     }
     return self;
 }
 
-- (void)commonInit {
+- (void)initSetupPinLock {
     NSBundle *bundle = [NSBundle typ_bundle];
     _notMatchedText = NSLocalizedStringFromTableInBundle(@"pinlock.error.pin.matched", nil, bundle, nil);
     _confirmationText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.confirmation", nil, bundle, nil);

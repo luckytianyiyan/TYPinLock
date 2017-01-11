@@ -22,19 +22,19 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self commonInit];
+        [self initPinLock];
     }
     return self;
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self commonInit];
+        [self initPinLock];
     }
     return self;
 }
 
-- (void)commonInit {
+- (void)initPinLock {
     _cancelEnabled = YES;
     _tapSoundEnabled = YES;
     _animationDuration = 0.08f;
