@@ -9,6 +9,7 @@
 #import "TYViewController.h"
 #import <Masonry/Masonry.h>
 #import <TYPinLock/TYPinLockViewController.h>
+#import <TYPinLock/TYPinLockSetupViewController.h>
 
 @interface TYViewController ()
 
@@ -48,15 +49,17 @@
 #pragma mark - Actions
 
 - (void)onSetupButtonClicked:(UIButton *)sender {
-    TYPinLockViewController *viewController = [[TYPinLockViewController alloc] init];
+    TYPinLockSetupViewController *viewController = [[TYPinLockSetupViewController alloc] init];
     viewController.pinCodeMinLength = 4;
     viewController.pinCodeMaxLength = 6;
+    viewController.errorVibrateEnabled = YES;
+    viewController.tapSoundEnabled = YES;
     __weak typeof(viewController) weakViewController = viewController;
     viewController.onCancelButtonClicked = ^{
         __strong typeof(viewController) strongViewController = weakViewController;
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };
-    viewController.onOkButtonClicked = ^(NSString *pinCode) {
+    viewController.onSetupSuccess = ^(NSString *pinCode) {
         NSLog(@"pin code: %@", pinCode);
         // Save Pin Code
         self.pinCode = pinCode;

@@ -1,0 +1,1 @@
+../../../../../TYPinLock/Classes/TYPinLockSetupViewController.h
