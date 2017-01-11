@@ -1,22 +1,22 @@
 //
-//  TYPinLockSetupViewController.m
+//  TYPinSetupViewController.m
 //  Pods
 //
 //  Created by luckytianyiyan on 17/1/11.
 //
 //
 
-#import "TYPinLockSetupViewController.h"
+#import "TYPinSetupViewController.h"
 #import "NSBundle+TYPinLock.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface TYPinLockSetupViewController ()
+@interface TYPinSetupViewController ()
 
 @property (nonatomic, copy) NSString *enteredPin;
 
 @end
 
-@implementation TYPinLockSetupViewController
+@implementation TYPinSetupViewController
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {

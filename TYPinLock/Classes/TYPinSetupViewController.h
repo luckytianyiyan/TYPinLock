@@ -1,5 +1,5 @@
 //
-//  TYPinLockSetupViewController.h
+//  TYPinSetupViewController.h
 //  Pods
 //
 //  Created by luckytianyiyan on 17/1/11.
@@ -8,7 +8,7 @@
 
 #import "TYPinLockViewController.h"
 
-@interface TYPinLockSetupViewController : TYPinLockViewController
+@interface TYPinSetupViewController : TYPinLockViewController
 
 @property (nonatomic, copy, nullable) void (^onSetupSuccess)(NSString *pinCode);
 @property (nonatomic, assign) BOOL errorVibrateEnabled;
