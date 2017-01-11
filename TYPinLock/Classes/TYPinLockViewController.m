@@ -80,7 +80,6 @@
 }
 
 - (void)playErrorAnimationWithCompletion:(nullable void (^)(BOOL finished))completion {
-    NSBundle *bundle = [NSBundle typ_bundle];
     [self.lockView playErrorAnimation:self.animationDuration direction:-35.f completion:completion];
 }
 

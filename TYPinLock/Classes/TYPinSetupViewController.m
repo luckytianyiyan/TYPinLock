@@ -45,20 +45,20 @@
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.enteredPin.length < 1) {
             strongSelf.enteredPin = pinCode;
-            [strongSelf.lockView updateDetailText:self.confirmationText duration:self.animationDuration completion:nil];
-            [self resetAnimated:YES];
+            [strongSelf.lockView updateDetailText:strongSelf.confirmationText duration:strongSelf.animationDuration completion:nil];
+            [strongSelf resetAnimated:YES];
         } else {
             if ([pinCode isEqualToString:strongSelf.enteredPin]) {
                 if (strongSelf.onSetupSuccess) {
                     strongSelf.onSetupSuccess(pinCode);
                 }
             } else {
-                [strongSelf.lockView updateDetailText:self.notMatchedText duration:self.animationDuration completion:nil];
+                [strongSelf.lockView updateDetailText:strongSelf.notMatchedText duration:strongSelf.animationDuration completion:nil];
                 [strongSelf playErrorAnimation];
-                [self resetAnimated:YES];
+                [strongSelf resetAnimated:YES];
                 strongSelf.enteredPin = nil;
                 
-                if (self.errorVibrateEnabled) {
+                if (strongSelf.errorVibrateEnabled) {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                 }
             }

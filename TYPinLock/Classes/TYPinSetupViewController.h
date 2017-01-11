@@ -8,6 +8,8 @@
 
 #import "TYPinLockViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface TYPinSetupViewController : TYPinLockViewController
 
 @property (nonatomic, copy, nullable) void (^onSetupSuccess)(NSString *pinCode);
@@ -17,3 +19,5 @@
 @property (nonatomic, strong) NSString *confirmationText;
 
 @end
+
+NS_ASSUME_NONNULL_END
