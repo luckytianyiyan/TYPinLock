@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) void (^onCancelButtonClicked)();
 
 - (void)playErrorAnimation;
+- (void)playErrorAnimationWithCompletion:(nullable void (^)(BOOL finished))completion;
 
 - (void)updateButtonsHidden;
 

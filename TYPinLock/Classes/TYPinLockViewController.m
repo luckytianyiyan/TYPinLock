@@ -76,9 +76,14 @@
 #pragma mark - Animate
 
 - (void)playErrorAnimation {
-    NSBundle *bundle = [NSBundle typ_bundle];
-    [self.lockView playErrorAnimation:self.animationDuration direction:-35.f completion:nil];
+    [self playErrorAnimationWithCompletion:nil];
 }
+
+- (void)playErrorAnimationWithCompletion:(nullable void (^)(BOOL finished))completion {
+    NSBundle *bundle = [NSBundle typ_bundle];
+    [self.lockView playErrorAnimation:self.animationDuration direction:-35.f completion:completion];
+}
+
 
 #pragma mark - Event
 
