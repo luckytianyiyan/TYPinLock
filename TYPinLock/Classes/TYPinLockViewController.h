@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)playErrorAnimation;
 
+- (void)updateButtonsHidden;
+
 @end
 
 NS_ASSUME_NONNULL_END

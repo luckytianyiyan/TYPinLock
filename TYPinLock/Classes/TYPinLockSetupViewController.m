@@ -71,8 +71,7 @@
 
 - (void)resetAnimated:(BOOL)animated {
     self.lockView.digitsTextField.text = @"";
-    [self.lockView setCancelButtonHidden:NO animated:YES completion:nil];
-    [self.lockView setOkButtonHidden:YES animated:YES completion:nil];
+    [self updateButtonsHidden];
 }
 
 @end
