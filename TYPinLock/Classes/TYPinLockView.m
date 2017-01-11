@@ -172,6 +172,16 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
     }
 }
 
+- (void)updateDetailText:(NSString *)text duration:(CGFloat)duration completion:(nullable void (^)(BOOL finished))completion {
+    CATransition *animation = [CATransition animation];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.type = kCATransitionFade;
+    animation.duration = duration;
+    [self.detailLabel.layer addAnimation:animation forKey:@"kCATransitionFade"];
+    
+    self.detailLabel.text = text;
+}
+
 - (void)playErrorAnimation:(CGFloat)duration direction:(CGFloat)direction {
     [UIView animateWithDuration:duration animations:^{
         CGAffineTransform transform = CGAffineTransformMakeTranslation(direction, 0);
