@@ -181,16 +181,19 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
     self.detailLabel.text = text;
 }
 
-- (void)playErrorAnimation:(CGFloat)duration direction:(CGFloat)direction {
+- (void)playErrorAnimation:(CGFloat)duration direction:(CGFloat)direction completion:(nullable void (^)(BOOL finished))completion {
     [UIView animateWithDuration:duration animations:^{
         CGAffineTransform transform = CGAffineTransformMakeTranslation(direction, 0);
         self.digitsTextField.layer.affineTransform = transform;
     } completion:^(BOOL finished) {
         if(fabs(direction) < 1) {
             self.digitsTextField.layer.affineTransform = CGAffineTransformIdentity;
+            if (completion) {
+                completion(finished);
+            }
             return;
         }
-        [self playErrorAnimation:duration direction:-1 * direction / 2];
+        [self playErrorAnimation:duration direction:-1 * direction / 2 completion:completion];
     }];
 }
 

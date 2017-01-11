@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *labelColor UI_APPEARANCE_SELECTOR;
 
 - (void)updateDetailText:(NSString *)text duration:(CGFloat)duration completion:(nullable void (^)(BOOL finished))completion;
-- (void)playErrorAnimation:(CGFloat)duration direction:(CGFloat)direction;
+- (void)playErrorAnimation:(CGFloat)duration direction:(CGFloat)direction completion:(nullable void (^)(BOOL finished))completion;
 
 - (void)setDeleteButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 - (void)setOkButtonHidden:(BOOL)hidden animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
