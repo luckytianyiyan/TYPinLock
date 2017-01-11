@@ -37,6 +37,7 @@
 - (void)commonInit {
     _cancelEnabled = YES;
     _tapSoundEnabled = YES;
+    _animationDuration = 0.08f;
 }
 
 - (void)viewDidLoad {
@@ -75,7 +76,7 @@
 
 - (void)playErrorAnimation {
     NSBundle *bundle = [NSBundle typ_bundle];
-    [self.lockView playErrorAnimation:0.08f direction:-35.f];
+    [self.lockView playErrorAnimation:self.animationDuration direction:-35.f];
 }
 
 #pragma mark - Event

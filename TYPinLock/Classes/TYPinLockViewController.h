@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL tapSoundEnabled;
 @property (nonatomic, assign) BOOL cancelEnabled;
 
+@property (nonatomic, assign) CGFloat animationDuration;
+
 @property (nonatomic, copy, nullable) void (^onOkButtonClicked)(NSString *pinCode);
 @property (nonatomic, copy, nullable) void (^onCancelButtonClicked)();
 

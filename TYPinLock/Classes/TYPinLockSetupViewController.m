@@ -45,7 +45,7 @@
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.enteredPin.length < 1) {
             strongSelf.enteredPin = pinCode;
-            [strongSelf.lockView updateDetailText:self.confirmationText duration:0.08f completion:nil];
+            [strongSelf.lockView updateDetailText:self.confirmationText duration:self.animationDuration completion:nil];
             [self resetAnimated:YES];
         } else {
             if ([pinCode isEqualToString:strongSelf.enteredPin]) {
@@ -53,7 +53,7 @@
                     strongSelf.onSetupSuccess(pinCode);
                 }
             } else {
-                [strongSelf.lockView updateDetailText:self.notMatchedText duration:0.08f completion:nil];
+                [strongSelf.lockView updateDetailText:self.notMatchedText duration:self.animationDuration completion:nil];
                 [strongSelf playErrorAnimation];
                 [self resetAnimated:YES];
                 strongSelf.enteredPin = nil;
