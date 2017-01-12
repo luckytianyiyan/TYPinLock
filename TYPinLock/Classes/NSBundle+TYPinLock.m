@@ -7,11 +7,12 @@
 //
 
 #import "NSBundle+TYPinLock.h"
+#import "TYPinLockView.h"
 
 @implementation NSBundle (TYPinLock)
 
 + (NSBundle *)typ_bundle {
-    return [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"TYPinLock" ofType:@"bundle"]];
+    return [NSBundle bundleWithPath:[[NSBundle bundleForClass:[TYPinLockView class]] pathForResource:@"TYPinLock" ofType:@"bundle"]];
 }
 
 @end
