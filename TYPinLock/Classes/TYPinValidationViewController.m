@@ -32,7 +32,9 @@
 }
 
 - (void)initPinValidation {
-    _forgotPasswordText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.forgot", nil, [NSBundle typ_bundle], nil);
+    NSBundle *bundle = [NSBundle typ_bundle];
+    _forgotPasswordText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.forgot", nil, bundle, nil);
+    _validateErrorText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.validate.error", nil, bundle, nil);
     _forgotPasswordEnabled = YES;
 }
 
