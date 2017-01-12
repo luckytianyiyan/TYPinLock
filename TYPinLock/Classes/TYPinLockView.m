@@ -58,7 +58,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _deleteButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"delete", @"") forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button.alpha = 0;
             button;
