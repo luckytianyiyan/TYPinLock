@@ -41,7 +41,7 @@ CGFloat const TYPinButtonAnimationDuration = 0.15f;
 
 + (instancetype)buttonWithNumber:(NSInteger)number letters:(NSString *)letters {
     TYPinButton *button = [[TYPinButton alloc] init];
-    button.numberText = [NSString stringWithFormat:@"%ld", number];
+    button.numberText = [NSString stringWithFormat:@"%zd", number];
     button.lettersText = letters;
     return button;
 }

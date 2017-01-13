@@ -58,7 +58,7 @@
             __strong typeof(self) strongSelf = weakSelf;
             NSUInteger maxLength = NSMaxRange(strongSelf.pinCodeLengthRange);
             if (maxLength == 0 || strongSelf.lockView.pinCode.length < maxLength - 1) {
-                strongSelf.lockView.pinCode = [NSString stringWithFormat:@"%@%ld", strongSelf.lockView.pinCode, number];
+                strongSelf.lockView.pinCode = [NSString stringWithFormat:@"%@%zd", strongSelf.lockView.pinCode, number];
             }
             [strongSelf updateButtonsHidden];
             if (strongSelf.tapSoundEnabled) {
