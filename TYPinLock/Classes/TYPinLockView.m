@@ -49,7 +49,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _okButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"ok", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedStringFromTableInBundle(@"ok", nil, bundle, nil) forState:UIControlStateNormal];
             button.alpha = 0;
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button;
@@ -58,7 +58,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _deleteButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedStringFromTableInBundle(@"delete", nil, bundle, nil) forState:UIControlStateNormal];
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button.alpha = 0;
             button;
@@ -67,7 +67,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
         
         _cancelButton = ({
             UIButton *button = [[UIButton alloc] init];
-            [button setTitle:NSLocalizedString(@"cancel", nil) forState:UIControlStateNormal];
+            [button setTitle:NSLocalizedStringFromTableInBundle(@"cancel", nil, bundle, nil) forState:UIControlStateNormal];
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             button;
         });
