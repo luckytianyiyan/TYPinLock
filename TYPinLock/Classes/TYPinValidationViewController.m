@@ -83,7 +83,6 @@
     LAContext *laContext = [[LAContext alloc] init];
     if (_touchIDEnable && [laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
         [laContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:_touchIDText reply:^(BOOL success, NSError * _Nullable error) {
-            NSLog(@"%f, error: %@", success, error);
             if (success) {
                 if (self.onValidateSuccess) {
                     self.onValidateSuccess(nil, TYPinValidationTypeTouchID);

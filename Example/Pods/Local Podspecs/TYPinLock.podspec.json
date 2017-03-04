@@ -1,6 +1,6 @@
 {
   "name": "TYPinLock",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A sample pinlock.",
   "homepage": "https://github.com/luckytianyiyan/TYPinLock",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/luckytianyiyan/TYPinLock.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "social_media_url": "https://twitter.com/luckytianyiyan",
   "platforms": {
