@@ -7,7 +7,6 @@
 //
 
 #import "TYViewController.h"
-#import <Masonry/Masonry.h>
 #import <TYPinLock/TYPinLockViewController.h>
 #import <TYPinLock/TYPinSetupViewController.h>
 #import <TYPinLock/TYPinValidationViewController.h>
@@ -19,6 +18,8 @@
 @property (nonatomic, strong) UIButton *lockButton;
 
 @property (nonatomic, copy) NSString *pinCode;
+
+@property (nonatomic, strong) UILabel *touchIDLabel;
 
 @end
 
@@ -32,6 +33,11 @@
     _touchIdSwitch.on = YES;
     [self.view addSubview:_touchIdSwitch];
     
+    _touchIDLabel = [[UILabel alloc] init];
+    _touchIDLabel.textAlignment = NSTextAlignmentCenter;
+    _touchIDLabel.text = @"Touch ID";
+    [self.view addSubview:_touchIDLabel];
+    
     _setupButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_setupButton setTitle:@"Set Pin" forState:UIControlStateNormal];
     [_setupButton addTarget:self action:@selector(onSetupButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -42,19 +48,16 @@
     [_lockButton addTarget:self action:@selector(onLockButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_lockButton];
     
-    [_setupButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-    }];
-    
-    [_lockButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_setupButton.mas_bottom).offset(20.f);
-        make.centerX.equalTo(_setupButton);
-    }];
-    
-    [_touchIdSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_setupButton.mas_top);
-        make.centerX.equalTo(self.view);
-    }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CGFloat labelHeight = 50.f;
+    _setupButton.frame = CGRectMake(0, self.view.center.y, CGRectGetWidth(self.view.bounds), labelHeight);
+    _lockButton.frame = CGRectOffset(_setupButton.frame, 0, labelHeight);
+    [_touchIdSwitch sizeToFit];
+    _touchIdSwitch.center = CGPointMake(self.view.center.x, CGRectGetMinY(_setupButton.frame) - CGRectGetHeight(_touchIdSwitch.bounds) / 2);
+    _touchIDLabel.frame = CGRectOffset(_setupButton.frame, 0, - labelHeight - CGRectGetHeight(_touchIdSwitch.bounds));
 }
 
 #pragma mark - Actions
