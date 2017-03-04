@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12F114BC2342F899EFB673EF /* Pods_TYPinLock_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EB7649F78C0941A0585B76 /* Pods_TYPinLock_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,8 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		6A8A2D008EF4A9AD34C9C53C /* libPods-TYPinLock_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B94AF3E9ECBC133A13457E9D /* libPods-TYPinLock_Tests.a */; };
-		AFA56CD6361CB1D683D500C7 /* libPods-TYPinLock_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1364B3D8D0CACE490D5355D8 /* libPods-TYPinLock_Example.a */; };
+		BDB532D9A3324BC8E3F51C6B /* Pods_TYPinLock_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBCBCFFAEC1AB74CF5CA08 /* Pods_TYPinLock_Example.framework */; };
 		F5CFE3F81E22B2CF0073CB11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE3F71E22B2CF0073CB11 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1364B3D8D0CACE490D5355D8 /* libPods-TYPinLock_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TYPinLock_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CBCBCFFAEC1AB74CF5CA08 /* Pods_TYPinLock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TYPinLock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE3642CFEBCBFF063F96A8A /* TYPinLock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TYPinLock.podspec; path = ../TYPinLock.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* TYPinLock_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYPinLock_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,10 +57,10 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		64EB7649F78C0941A0585B76 /* Pods_TYPinLock_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TYPinLock_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		660CD847D6B03A7F3B5ADA60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		68027F771D0D356FCE3AD011 /* Pods-TYPinLock_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYPinLock_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TYPinLock_Tests/Pods-TYPinLock_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B4CC961106F496502FED2E76 /* Pods-TYPinLock_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYPinLock_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TYPinLock_Tests/Pods-TYPinLock_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B94AF3E9ECBC133A13457E9D /* libPods-TYPinLock_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TYPinLock_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF83ADACF8287DC433524ED9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EF053D9F0C0DF8E88DCB0DDF /* Pods-TYPinLock_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYPinLock_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TYPinLock_Example/Pods-TYPinLock_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F5CFE3F71E22B2CF0073CB11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				AFA56CD6361CB1D683D500C7 /* libPods-TYPinLock_Example.a in Frameworks */,
+				BDB532D9A3324BC8E3F51C6B /* Pods_TYPinLock_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				6A8A2D008EF4A9AD34C9C53C /* libPods-TYPinLock_Tests.a in Frameworks */,
+				12F114BC2342F899EFB673EF /* Pods_TYPinLock_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				1364B3D8D0CACE490D5355D8 /* libPods-TYPinLock_Example.a */,
-				B94AF3E9ECBC133A13457E9D /* libPods-TYPinLock_Tests.a */,
+				18CBCBCFFAEC1AB74CF5CA08 /* Pods_TYPinLock_Example.framework */,
+				64EB7649F78C0941A0585B76 /* Pods_TYPinLock_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

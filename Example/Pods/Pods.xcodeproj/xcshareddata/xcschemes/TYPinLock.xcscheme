@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DF4E8404606FE5C5C7EC0274EB1C6E40'
+               BlueprintIdentifier = '1FE5374813C1DB8A5A0B6FDBD18506B5'
                BlueprintName = 'TYPinLock'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libTYPinLock.a'>
+               BuildableName = 'TYPinLock.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
