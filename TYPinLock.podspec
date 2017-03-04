@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
 
   s.source_files = 'TYPinLock/Classes/**/*'
+  s.private_header_files = 'TYPinLock/Classes/private/*.h'
 
   s.resource_bundles = {
     'TYPinLock' => ['TYPinLock/Assets/*']
