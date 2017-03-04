@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *validateErrorText;
 @property (nonatomic, assign) BOOL forgotPasswordEnabled;
 @property (nonatomic, copy) NSString *forgotPasswordText;
+@property (nonatomic, assign) BOOL touchIDEnable;
 
 @property (nonatomic, copy) BOOL (^validatePin)(NSString *pinCode);
 @property (nonatomic, copy) void (^forgotPassword)();
