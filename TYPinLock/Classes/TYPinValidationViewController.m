@@ -78,10 +78,13 @@
     };
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!_touchIDEnable) {
+        return;
+    }
     LAContext *laContext = [[LAContext alloc] init];
-    if (_touchIDEnable && [laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
+    if ([laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
         [laContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:_touchIDText reply:^(BOOL success, NSError * _Nullable error) {
             if (success) {
                 if (self.onValidateSuccess) {
