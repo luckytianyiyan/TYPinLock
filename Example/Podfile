@@ -1,4 +1,8 @@
-platform :ios,'7.0'
+platform :ios,'8.0'
+
+# for development https://github.com/CocoaPods/CocoaPods/pull/5254
+install! 'cocoapods',
+  :share_schemes_for_development_pods => true
 
 target 'TYPinLock_Example' do
   pod 'TYPinLock', :path => '../'
