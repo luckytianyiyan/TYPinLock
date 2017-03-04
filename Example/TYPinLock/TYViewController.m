@@ -14,6 +14,7 @@
 
 @interface TYViewController ()
 
+@property (nonatomic, strong) UISwitch *touchIdSwitch;
 @property (nonatomic, strong) UIButton *setupButton;
 @property (nonatomic, strong) UIButton *lockButton;
 
@@ -26,6 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _touchIdSwitch = [[UISwitch alloc] init];
+    _touchIdSwitch.on = YES;
+    [self.view addSubview:_touchIdSwitch];
     
     _setupButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_setupButton setTitle:@"Set Pin" forState:UIControlStateNormal];
@@ -44,6 +49,11 @@
     [_lockButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_setupButton.mas_bottom).offset(20.f);
         make.centerX.equalTo(_setupButton);
+    }];
+    
+    [_touchIdSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_setupButton.mas_top);
+        make.centerX.equalTo(self.view);
     }];
 }
 
@@ -75,6 +85,7 @@
     }
     
     TYPinValidationViewController *viewController = [[TYPinValidationViewController alloc] init];
+    viewController.touchIDEnable = _touchIdSwitch.on;
     viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.cancelEnabled = NO;
     __weak typeof(self) weakSelf = self;
@@ -83,7 +94,7 @@
         return [strongSelf.pinCode isEqualToString:pinCode];
     };
     __weak typeof(viewController) weakViewController = viewController;
-    viewController.onValidateSuccess = ^(NSString *pinCode) {
+    viewController.onValidateSuccess = ^(NSString *pinCode, TYPinValidationType type) {
         __strong typeof(viewController) strongViewController = weakViewController;
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };

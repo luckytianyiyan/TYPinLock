@@ -1,9 +1,8 @@
 {
   "name": "TYPinLock",
   "version": "0.1.0",
-  "summary": "A short description of TYPinLock.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/TYPinLock",
+  "summary": "A sample pinlock.",
+  "homepage": "https://github.com/luckytianyiyan/TYPinLock",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,16 +11,22 @@
     "luckytianyiyan": "luckytianyiyan@wacai.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/TYPinLock.git",
+    "git": "https://github.com/luckytianyiyan/TYPinLock.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/luckytianyiyan",
   "platforms": {
     "ios": "7.0"
   },
   "source_files": "TYPinLock/Classes/**/*",
+  "private_header_files": "TYPinLock/Classes/private/*.h",
   "resource_bundles": {
     "TYPinLock": [
       "TYPinLock/Assets/*"
     ]
-  }
+  },
+  "frameworks": [
+    "UIKit",
+    "LocalAuthentication"
+  ]
 }

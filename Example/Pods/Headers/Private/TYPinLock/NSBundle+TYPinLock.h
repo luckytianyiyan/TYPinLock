@@ -1,1 +1,1 @@
-../../../../../TYPinLock/Classes/NSBundle+TYPinLock.h
+../../../../../TYPinLock/Classes/private/NSBundle+TYPinLock.h
