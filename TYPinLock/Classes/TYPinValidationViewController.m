@@ -60,7 +60,7 @@
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.validatePin ? strongSelf.validatePin(pinCode) : YES) {
             if (strongSelf.onValidateSuccess) {
-                strongSelf.onValidateSuccess(pinCode);
+                strongSelf.onValidateSuccess(pinCode, TYPinValidationTypePinCode);
             }
         } else {
             [strongSelf.lockView updateDetailText:strongSelf.validateErrorText duration:strongSelf.animationDuration completion:nil];
@@ -81,7 +81,7 @@
             NSLog(@"%f, error: %@", success, error);
             if (success) {
                 if (self.onValidateSuccess) {
-                    self.onValidateSuccess(nil);
+                    self.onValidateSuccess(nil, TYPinValidationTypeTouchID);
                 }
             }
         }];
