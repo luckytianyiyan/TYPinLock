@@ -11,7 +11,7 @@
 
 @implementation NSBundle (TYPinLock)
 
-+ (NSBundle *)typ_bundle {
++ (nullable NSBundle *)typ_bundle {
     return [NSBundle bundleWithPath:[[NSBundle bundleForClass:[TYPinLockView class]] pathForResource:@"TYPinLock" ofType:@"bundle"]];
 }
 
