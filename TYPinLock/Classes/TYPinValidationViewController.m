@@ -36,6 +36,11 @@
     NSBundle *bundle = [NSBundle typ_bundle];
     _forgotPasswordText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.forgot", nil, bundle, nil);
     _validateErrorText = NSLocalizedStringFromTableInBundle(@"pinlock.pin.validate.error", nil, bundle, nil);
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    _touchIDText = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"pinlock.pin.validate.touchid", nil, bundle, nil), appName];
+    _touchIDEnable = YES;
     _forgotPasswordEnabled = YES;
 }
 
@@ -77,7 +82,7 @@
     [super viewWillAppear:animated];
     LAContext *laContext = [[LAContext alloc] init];
     if (_touchIDEnable && [laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
-        [laContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"test" reply:^(BOOL success, NSError * _Nullable error) {
+        [laContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:_touchIDText reply:^(BOOL success, NSError * _Nullable error) {
             NSLog(@"%f, error: %@", success, error);
             if (success) {
                 if (self.onValidateSuccess) {

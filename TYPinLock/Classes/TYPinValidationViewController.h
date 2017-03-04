@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, TYPinValidationType) {
 @property (nonatomic, copy) NSString *validateErrorText;
 @property (nonatomic, assign) BOOL forgotPasswordEnabled;
 @property (nonatomic, copy) NSString *forgotPasswordText;
+@property (nonatomic, copy) NSString *touchIDText;
 
 /**
  * @brief if available, use Touch ID

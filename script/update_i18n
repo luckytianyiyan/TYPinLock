@@ -1,5 +1,18 @@
 #!/bin/sh
+required_ver="1.1.2"
+
+if [ ! $(command -v tystrings) ]; then
+  echo "❗️ tystrings command not found"
+  echo "sudo pip install tystrings"
+  exit 1
+elif [ ! `python -c "import tystrings; from pkg_resources import parse_version; print 1 if parse_version(tystrings.__version__) >= parse_version(\"${required_ver}\") else 0;"` ]
+then
+  echo "❗️ require tystrings version $required_ver"
+  echo "sudo pip install tystrings --upgrade"
+  exit 1
+fi
+
 current_dir=$(dirname $0)
-find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/en.lproj -v
-find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/zh-Hans.lproj -v
-find $current_dir/../TYPinLock/Classes -name \*.m -print0 | xargs -0 tystrings -o $current_dir/../TYPinLock/Assets/zh-Hant.lproj -v
+tystrings generate $(find $current_dir/../TYPinLock/Classes -name \*.m) -o $current_dir/../TYPinLock/Assets/en.lproj $current_dir/../TYPinLock/Assets/zh-Hans.lproj $current_dir/../TYPinLock/Assets/zh-Hant.lproj
+read -n 1 -s -p "Press any key to continue"
+tystrings translate $current_dir/../Tyblr/zh-Hans.lproj/Localizable.strings $current_dir/../Tyblr/zh-Hant.lproj/Localizable.strings --src-lang zh --dst-lang cht
