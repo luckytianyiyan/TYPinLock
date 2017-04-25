@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/TYPinLock.svg?style=flat)](http://cocoapods.org/pods/TYPinLock)
 [![License](https://img.shields.io/cocoapods/l/TYPinLock.svg?style=flat)](http://cocoapods.org/pods/TYPinLock)
 [![Platform](https://img.shields.io/cocoapods/p/TYPinLock.svg?style=flat)](http://cocoapods.org/pods/TYPinLock)
+[![codebeat badge](https://codebeat.co/badges/50f8bb6f-58f8-477c-bcbc-eb41aa8e992b)](https://codebeat.co/projects/github-com-luckytianyiyan-typinlock-master)
 
 ## Example
 
