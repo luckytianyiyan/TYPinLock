@@ -120,7 +120,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
     
     CGFloat pinSelectionTop = self.enterPasscodeLabel.frame.origin.y + self.enterPasscodeLabel.frame.size.height + 17.5;
     
-    CGFloat textFieldWidth = 152.f;
+    CGFloat textFieldWidth = fullWidth / 2.f;
     self.digitsTextField.frame = CGRectMake((fullWidth / 2.f) - (textFieldWidth / 2), pinSelectionTop - 7.5f, textFieldWidth, 30);
     
     self.detailLabel.frame = CGRectMake(fullWidth / 2.f - 150.f, pinSelectionTop + 30.f, 300.f, 23.f);

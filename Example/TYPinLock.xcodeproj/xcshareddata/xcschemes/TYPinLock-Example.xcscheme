@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
                BuildableName = "TYPinLock_Tests.xctest"
                BlueprintName = "TYPinLock_Tests"
+               ReferencedContainer = "container:TYPinLock.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "193EAD632008F8BC000C42F0"
+               BuildableName = "TYPinLock_UITests.xctest"
+               BlueprintName = "TYPinLock_UITests"
                ReferencedContainer = "container:TYPinLock.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -55,6 +66,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12F114BC2342F899EFB673EF /* Pods_TYPinLock_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EB7649F78C0941A0585B76 /* Pods_TYPinLock_Tests.framework */; };
+		193EAD672008F8BC000C42F0 /* TYPinLock_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EAD662008F8BC000C42F0 /* TYPinLock_UITests.swift */; };
+		193EAD6F2009013E000C42F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EAD6E2009013D000C42F0 /* SnapshotHelper.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -26,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		193EAD692008F8BC000C42F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = TYPinLock_Example;
+		};
 		6003F5B3195388D20070C39A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
@@ -37,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		18CBCBCFFAEC1AB74CF5CA08 /* Pods_TYPinLock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TYPinLock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		193EAD642008F8BC000C42F0 /* TYPinLock_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYPinLock_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		193EAD662008F8BC000C42F0 /* TYPinLock_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYPinLock_UITests.swift; sourceTree = "<group>"; };
+		193EAD682008F8BC000C42F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		193EAD6E2009013D000C42F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1CE3642CFEBCBFF063F96A8A /* TYPinLock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TYPinLock.podspec; path = ../TYPinLock.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* TYPinLock_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYPinLock_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		193EAD612008F8BC000C42F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F587195388D20070C39A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,12 +113,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193EAD652008F8BC000C42F0 /* TYPinLock_UITests */ = {
+			isa = PBXGroup;
+			children = (
+				193EAD6E2009013D000C42F0 /* SnapshotHelper.swift */,
+				193EAD662008F8BC000C42F0 /* TYPinLock_UITests.swift */,
+				193EAD682008F8BC000C42F0 /* Info.plist */,
+			);
+			path = TYPinLock_UITests;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for TYPinLock */,
 				6003F5B5195388D20070C39A /* Tests */,
+				193EAD652008F8BC000C42F0 /* TYPinLock_UITests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				BF2CE72DDFCC9DB37C886A1B /* Pods */,
@@ -110,6 +141,7 @@
 			children = (
 				6003F58A195388D20070C39A /* TYPinLock_Example.app */,
 				6003F5AE195388D20070C39A /* TYPinLock_Tests.xctest */,
+				193EAD642008F8BC000C42F0 /* TYPinLock_UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +228,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		193EAD632008F8BC000C42F0 /* TYPinLock_UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 193EAD6D2008F8BC000C42F0 /* Build configuration list for PBXNativeTarget "TYPinLock_UITests" */;
+			buildPhases = (
+				193EAD602008F8BC000C42F0 /* Sources */,
+				193EAD612008F8BC000C42F0 /* Frameworks */,
+				193EAD622008F8BC000C42F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				193EAD6A2008F8BC000C42F0 /* PBXTargetDependency */,
+			);
+			name = TYPinLock_UITests;
+			productName = TYPinLock_UITests;
+			productReference = 193EAD642008F8BC000C42F0 /* TYPinLock_UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		6003F589195388D20070C39A /* TYPinLock_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "TYPinLock_Example" */;
@@ -244,9 +294,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TY;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = yinhun;
 				TargetAttributes = {
+					193EAD632008F8BC000C42F0 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = E67MQJRFZ7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6003F589195388D20070C39A;
+					};
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = E67MQJRFZ7;
 					};
@@ -270,11 +327,19 @@
 			targets = (
 				6003F589195388D20070C39A /* TYPinLock_Example */,
 				6003F5AD195388D20070C39A /* TYPinLock_Tests */,
+				193EAD632008F8BC000C42F0 /* TYPinLock_UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		193EAD622008F8BC000C42F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F588195388D20070C39A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +466,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		193EAD602008F8BC000C42F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				193EAD672008F8BC000C42F0 /* TYPinLock_UITests.swift in Sources */,
+				193EAD6F2009013E000C42F0 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F586195388D20070C39A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +496,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		193EAD6A2008F8BC000C42F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* TYPinLock_Example */;
+			targetProxy = 193EAD692008F8BC000C42F0 /* PBXContainerItemProxy */;
+		};
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* TYPinLock_Example */;
@@ -449,6 +528,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		193EAD6B2008F8BC000C42F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E67MQJRFZ7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TYPinLock_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tianyiyan.TYPinLock-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TYPinLock_Example;
+			};
+			name = Debug;
+		};
+		193EAD6C2008F8BC000C42F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = E67MQJRFZ7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TYPinLock_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tianyiyan.TYPinLock-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TYPinLock_Example;
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -603,6 +758,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		193EAD6D2008F8BC000C42F0 /* Build configuration list for PBXNativeTarget "TYPinLock_UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				193EAD6B2008F8BC000C42F0 /* Debug */,
+				193EAD6C2008F8BC000C42F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "TYPinLock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
