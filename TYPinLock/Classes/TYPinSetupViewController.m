@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak typeof(self) weakSelf = self;
-    self.onOkButtonClicked = ^(NSString *pinCode) {
+    self.onOkButtonClick = ^(NSString *pinCode) {
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.enteredPin.length < 1) {
             strongSelf.enteredPin = pinCode;

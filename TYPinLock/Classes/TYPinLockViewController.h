@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGFloat animationDuration;
 
-@property (nonatomic, copy, nullable) void (^onOkButtonClicked)(NSString *pinCode);
-@property (nonatomic, copy, nullable) void (^onCancelButtonClicked)();
+@property (nonatomic, copy, nullable) void (^onOkButtonClick)(NSString *pinCode);
+@property (nonatomic, copy, nullable) void (^onCancelButtonClick)(void);
 
 - (void)playErrorAnimation;
 - (void)playErrorAnimationWithCompletion:(nullable void (^)(BOOL finished))completion;

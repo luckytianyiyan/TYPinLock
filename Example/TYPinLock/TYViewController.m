@@ -40,12 +40,12 @@
     
     _setupButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_setupButton setTitle:@"Set Pin" forState:UIControlStateNormal];
-    [_setupButton addTarget:self action:@selector(onSetupButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [_setupButton addTarget:self action:@selector(onSetupButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_setupButton];
     
     _lockButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_lockButton setTitle:@"Lock" forState:UIControlStateNormal];
-    [_lockButton addTarget:self action:@selector(onLockButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [_lockButton addTarget:self action:@selector(onLockButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_lockButton];
     
 }
@@ -62,13 +62,13 @@
 
 #pragma mark - Actions
 
-- (void)onSetupButtonClicked:(UIButton *)sender {
+- (void)onSetupButtonClick:(UIButton *)sender {
     TYPinSetupViewController *viewController = [[TYPinSetupViewController alloc] init];
     viewController.pinCodeLengthRange = NSMakeRange(4, 3);
     viewController.errorVibrateEnabled = YES;
     viewController.tapSoundEnabled = YES;
     __weak typeof(viewController) weakViewController = viewController;
-    viewController.onCancelButtonClicked = ^{
+    viewController.onCancelButtonClick = ^{
         __strong typeof(viewController) strongViewController = weakViewController;
         [strongViewController dismissViewControllerAnimated:YES completion:nil];
     };
@@ -82,7 +82,7 @@
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
-- (void)onLockButtonClicked:(UIButton *)sender {
+- (void)onLockButtonClick:(UIButton *)sender {
     if (self.pinCode.length < 1) {
         return;
     }

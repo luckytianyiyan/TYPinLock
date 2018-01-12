@@ -50,9 +50,9 @@
         view.detailLabel.text = NSLocalizedStringFromTableInBundle(@"pinlock.detail", nil, bundle, nil);
         view.translatesAutoresizingMaskIntoConstraints = NO;
         [view setCancelButtonHidden:!_cancelEnabled animated:YES completion:nil];
-        [view.okButton addTarget:self action:@selector(onOkButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [view.cancelButton addTarget:self action:@selector(onCancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [view.deleteButton addTarget:self action:@selector(onDeleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [view.okButton addTarget:self action:@selector(onOkButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [view.cancelButton addTarget:self action:@selector(onCancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [view.deleteButton addTarget:self action:@selector(onDeleteButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         __weak typeof(self) weakSelf = self;
         view.onNumberSelected = ^(NSInteger number) {
             __strong typeof(self) strongSelf = weakSelf;
@@ -86,19 +86,19 @@
 
 #pragma mark - Event
 
-- (void)onOkButtonClicked:(UIButton *)sender {
-    if (self.onOkButtonClicked) {
-        self.onOkButtonClicked(self.lockView.pinCode);
+- (void)onOkButtonClick:(UIButton *)sender {
+    if (self.onOkButtonClick) {
+        self.onOkButtonClick(self.lockView.pinCode);
     }
 }
 
-- (void)onCancelButtonClicked:(UIButton *)sender {
-    if (self.onCancelButtonClicked) {
-        self.onCancelButtonClicked();
+- (void)onCancelButtonClick:(UIButton *)sender {
+    if (self.onCancelButtonClick) {
+        self.onCancelButtonClick();
     }
 }
 
-- (void)onDeleteButtonClicked:(UIButton *)sender {
+- (void)onDeleteButtonClick:(UIButton *)sender {
     
     if (self.lockView.pinCode.length > 0) {
         self.lockView.pinCode = [self.lockView.pinCode substringWithRange:NSMakeRange(0, self.lockView.pinCode.length - 1)];

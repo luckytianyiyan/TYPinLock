@@ -51,7 +51,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.hidden = !self.forgotPasswordEnabled;
         [button setTitle:self.forgotPasswordText forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(onForgotPasswordButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(onForgotPasswordButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
     [self.view addSubview:_forgotButton];
@@ -61,7 +61,7 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.f constant:-24.f]];
     
     __weak typeof(self) weakSelf = self;
-    self.onOkButtonClicked = ^(NSString *pinCode) {
+    self.onOkButtonClick = ^(NSString *pinCode) {
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.validatePin ? strongSelf.validatePin(pinCode) : YES) {
             if (strongSelf.onValidateSuccess) {
@@ -97,7 +97,7 @@
 
 #pragma mark - Action
 
-- (void)onForgotPasswordButtonClicked:(UIButton *)sender {
+- (void)onForgotPasswordButtonClick:(UIButton *)sender {
     if (self.forgotPassword) {
         self.forgotPassword();
     }

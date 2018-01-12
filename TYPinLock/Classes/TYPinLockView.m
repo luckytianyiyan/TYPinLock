@@ -96,7 +96,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
             TYPinButton *button = [TYPinButton buttonWithNumber:i letters:buttonsLetters[i]];
             button.tag = i;
             button.clipsToBounds = YES;
-            [button addTarget:self action:@selector(onNumberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(onNumberButtonClick:) forControlEvents:UIControlEventTouchUpInside];
             [buttons addObject:button];
             [self addSubview:button];
         }
@@ -150,7 +150,7 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
 
 #pragma mark - Event
 
-- (void)onNumberButtonClicked:(UIButton *)sender {
+- (void)onNumberButtonClick:(UIButton *)sender {
     NSInteger number = sender.tag;
     if (_onNumberSelected) {
         _onNumberSelected(number);

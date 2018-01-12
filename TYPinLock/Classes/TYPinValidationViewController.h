@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, TYPinValidationType) {
 @property (nonatomic, assign) BOOL touchIDEnable;
 
 @property (nonatomic, copy) BOOL (^validatePin)(NSString *pinCode);
-@property (nonatomic, copy) void (^forgotPassword)();
+@property (nonatomic, copy) void (^forgotPassword)(void);
 
 @property (nonatomic, copy) void (^onValidateSuccess)( NSString * _Nullable pinCode, TYPinValidationType type);
 @property (nonatomic, copy) void (^onValidateError)(NSString *pinCode);
