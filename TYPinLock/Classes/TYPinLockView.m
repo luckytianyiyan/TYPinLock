@@ -114,7 +114,19 @@ static CGFloat const TYPinLockViewAnimationLength = 0.15f;
     CGFloat buttonMargin = marginHorizontal / 2.f;
     CGFloat buttonSize = (contentWidth - buttonMargin * 2) / 3.f;
     
-    CGFloat top = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 80.f : 65.f;
+    CGFloat top;
+    CGSize screenSize = UIScreen.mainScreen.bounds.size;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        top = 80.f;
+    } else if (screenSize.height <= 667) {
+        // < iPhone 5
+        top = 40.f;
+    } else if (screenSize.height >= 812) {
+        // > iPhone X
+        top = 120.f;
+    } else {
+        top = 65.f;
+    }
     
     self.enterPasscodeLabel.frame = CGRectMake(fullWidth / 2.f - 150.f, top, 300.f, 23.f);
     

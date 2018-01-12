@@ -58,7 +58,13 @@
     
     _forgotButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.f constant:0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_forgotButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.f constant:-24.f]];
+    NSLayoutConstraint *bottomConstraint;
+    if (@available(iOS 11, *)) {
+        bottomConstraint = [NSLayoutConstraint constraintWithItem:_forgotButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view.safeAreaLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.f constant:-24.f];
+    } else {
+        bottomConstraint = [NSLayoutConstraint constraintWithItem:_forgotButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.f constant:-24.f];
+    }
+    [self.view addConstraint:bottomConstraint];
     
     __weak typeof(self) weakSelf = self;
     self.onOkButtonClick = ^(NSString *pinCode) {
